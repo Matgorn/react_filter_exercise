@@ -25,14 +25,15 @@ const initialState = {
   filterQuery: ''
 };
 
-export default function browse(state = initialState, action) {
-  switch (action.type) {
+export default function browse(state = initialState, { type, payload }) {
+  const { people } = state;
 
-    // this is an example
-    case types.DO_NOTHING:
-      return state;
-
-    // ...
+  switch (type) {
+    case types.UPDATE_QUERY:
+      return {
+        people,
+        filterQuery: payload
+      };
 
     default:
       return state;

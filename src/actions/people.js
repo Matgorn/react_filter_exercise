@@ -6,4 +6,7 @@ export const doNothing = (payload) => ({
   payload: payload
 });
 
-// ...
+export const updateQuery = (payload) => ({
+  type: types.UPDATE_QUERY,
+  payload
+})
